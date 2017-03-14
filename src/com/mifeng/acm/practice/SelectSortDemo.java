@@ -19,24 +19,45 @@ public class SelectSortDemo {
 		selectSort(array);
 	}
 	
+//	public void selectSort(int[] A){
+//		for(int i = 0 ; i< A.length; i++){
+//			int min = A[i];
+//			int j = i+1;
+//			int k = 0 ;
+//			for(; j < A.length; j++ ){
+//				if(min >= A[j]){
+//					min = A[j];
+//					k = j;
+//				}
+//				//if(j)
+//				//A[i] = min;
+//				//A[j] = A[i];
+//			}
+//			if(k!=0){
+//				A[k] = A[i];
+//				A[i] = min;
+//			}
+//			
+//		}
+//		System.out.println("排序后："+ Arrays.toString(A));
+//	}
+	
 	public void selectSort(int[] A){
 		for(int i = 0 ; i< A.length; i++){
 			int min = A[i];
-			int j = i+1;
+			int j ;
 			int k = 0 ;
-			for(; j < A.length; j++ ){
+			for(j=i+1; j < A.length; j++ ){
 				if(min >= A[j]){
 					min = A[j];
 					k = j;
 				}
-				//if(j)
-				//A[i] = min;
-				//A[j] = A[i];
 			}
-			if(k!=0){
+			if(min != A[i]){
 				A[k] = A[i];
-				A[i] = min;
 			}
+			A[i] = min;
+			
 			
 		}
 		System.out.println("排序后："+ Arrays.toString(A));
